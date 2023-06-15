@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+    .signup-container {
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+    .signup-form {
+      padding: 5%;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 20px 0px #0000001a;
+    }
+    .signup-form h3 {
+      text-align: center;
+      margin-bottom:12%;
+      color: #333;
+    }
+    .btnSubmit {
+      font-weight: 600;
+      width: 50%;
+      color: #fff;
+      background-color: #0062cc;
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container signup-container">
+    <div class="row">
+      <div class="col-md-6 mx-auto signup-form">
+        <h3>Sign Up</h3>
+        <form method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" required name="name" placeholder="Your Name *" value="" />
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" required name="email" placeholder="Your Email *" value="" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" required name="password" placeholder="Your Password *" value="" />
+          </div>
+          <div class="form-group text-center">
+            <input type="submit" class="btnSubmit" value="Sign Up" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% if error %}
+    <div style="text-align: center;" class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Weight Loss Workouts - Fitness App</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/style.css") }}">
+    <style>
+        img {
+        width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 20px;
+}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="{{ url_for('static', filename="images/logo.png") }}" alt="Fitness App Logo">
+			<h1>BeFIT</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/workouts">Workouts</a></li>
+				<li><a href="nutrition">Nutrition</a></li>
+				<li><a href="/community">Community</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero-section">
+		<h2>Weight Loss Workouts</h2>
+		<p>Here are some effective workouts to help you lose weight and get in shape:</p>
+	</section>
+
+	<section class="workouts-section">
+		<div class="workouts-container">
+			<div class="workout container">
+				<img src="{{ url_for('static', filename="images/cardio.png") }}" alt="Cardio">
+                <div class="text-box">
+                    <h3>Cardio</h3>
+				    <p>Cardiovascular exercises are great for burning calories and shedding fat. Try doing 30 minutes of cardio 3-5 times per week.</p>
+                </div>
+				</div>
+			<div class="workout container">
+                <div class="text-box">
+                    <h3>Strength Training</h3>
+				    <p>Strength training can help you build muscle and boost your metabolism, which can lead to weight loss. Incorporate strength training exercises like squats, lunges, and push-ups into your workouts.</p></div>
+				<img src="{{ url_for('static', filename="images/strength.jpg") }}" alt="Strength Training">
+			</div>
+			<div class="workout container">
+				<img src="{{ url_for('static', filename="images/hiit.jpg") }}" alt="HIIT">
+				<div class="text-box">
+                    <h3>HIIT</h3>
+                    <p>High-intensity interval training (HIIT) involves short bursts of intense exercise followed by periods of rest. HIIT can help you burn more calories in less time than traditional cardio. Try doing a HIIT workout 2-3 times per week.</p>
+                </div>
+            </div>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; 2023 BeFIT. All rights reserved.</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>BeFIT - Nutrition</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #00cccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            justify-content: center;
+            }
+        
+        .bu {
+            background-color: #4CAF50; 
+            border-radius: 10px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            }	
+        input {
+            width: 40%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+            }
+
+        table {
+            font-family: 'Arial';
+            margin: 25px auto;
+            border-collapse: collapse;
+            border: 1px solid #eee;
+            border-bottom: 2px solid #00cccc;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+                0px 10px 20px rgba(0,0,0,0.05),
+                0px 20px 20px rgba(0,0,0,0.05),
+                0px 30px 20px rgba(0,0,0,0.05);
+                }
+        th, td {
+                color: #999;
+                border: 1px solid #eee;
+                padding: 12px 35px;
+                border-collapse: collapse;
+            }
+            th {
+                background: #00cccc;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 12px;
+                &.last {
+                border-right: none;
+                }
+            }
+    
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Fitness App Logo">
+            <h1>BeFIT</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/workouts">Workouts</a></li>
+                <li><a href="/nutrition">Nutrition</a></li>
+                <li><a href="/community">Community</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2>Nutrition</h2>
+        <p>Discover healthy eating habits and optimize your diet for better fitness results.</p>
+    </section>
+
+    <section>
+        <h1 style="background-color: rgb(116, 131, 131); text-align: center;padding: 10% px; margin: 20px;">Main Nutrients for Bodybuilding</h1>
+        <ul class="container" style="margin: 20px; margin-bottom: 5%;">
+            <li>Protein: Protein is essential for muscle growth and repair. It provides the building blocks (amino acids) needed for muscle development. Good sources of protein include chicken, beef, fish, eggs, dairy products, and plant-based protein sources like legumes, tofu, and quinoa.</li>
+            <li>Carbohydrates: Carbohydrates provide the energy needed for intense workouts and replenish glycogen stores in muscles. Opt for complex carbohydrates such as whole grains, fruits, vegetables, and legumes for sustained energy release.</li>
+            <li>Fats: Healthy fats are important for hormone production, joint health, and overall well-being. Include sources of unsaturated fats like avocados, nuts, seeds, olive oil, and fatty fish (such as salmon) in your diet.</li>
+      </ul>
+        <ul class="container" style="margin-left: 20%; margin-right: 20%; margin-bottom: 5%;">            
+            <li>Vitamins and Minerals: Adequate intake of vitamins and minerals is crucial for optimal body function and muscle growth. Focus on consuming a variety of fruits, vegetables, and whole foods to obtain a wide range of essential nutrients.</li>
+            <li>Water: Staying hydrated is vital for muscle function, nutrient transport, and overall health. Drink sufficient water throughout the day, especially during workouts and intense physical activity.</li>
+        </ul>
+    </section>
+    
+    <section class="nutrition-section">
+        <h1 style="background-color: rgb(116, 131, 131); text-align: center;padding: 10% px; margin: 20px;">Food Database</h1>
+        <div class="container">
+            <div style="margin-right: 10%;" class="search-box">
+                <form class="input" action="{{ url_for('nutrition') }}" method="POST">
+                    <input type="text" name="food" placeholder="Search for a food...">
+                    <button class="bu" type="submit">Search</button>
+                </form>
+            </div>
+
+            {% if query %}
+            <div class="search-results">
+                {% if query %}
+                    <h3>Search Results for '{{ query }}':</h3>
+                    {% if results %}
+                        <ul>
+                            {% for result in results %}
+                                <li><a href="/food/{{ result[0] }}">{{ result[1] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No results found.</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if food %}
+                <div class="food-details">
+                    <h3 style="margin-left: 35%;">Food Details (per 100g)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Energy (KJ)</th>
+                                <th>Protein (g)</th>
+                                <th>Fat (g)</th>
+                                <th>Carbohydrates (g)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ food.food_name }}</td>
+                                <td>{{ food.energy }}</td>
+                                <td>{{ food.protein }}</td>
+                                <td>{{ food.total_fat }}</td>
+                                <td>{{ food.carbohydrate }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    <footer>
+		<p>&copy; 2023 BeFIT. All rights reserved.</p>
+	</footer>
+</body>
+</html>

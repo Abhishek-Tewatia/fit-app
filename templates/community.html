@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Fitness App</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/style.css") }}">
+    <style>
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-image: "background.jpg";
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(8, 8, 8);
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.281);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+    color:#fff
+}
+
+.logo img {
+	width: 50px;
+	margin-right: 10px;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.hero-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 600px;
+	background-image: url('background.jpg');
+	background-size: cover;
+	color: #fff;
+	text-align: center;
+}
+
+.hero-section h2 {
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+.hero-section p {
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+button {
+	background-color: #e5c4a3;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px 20px;
+	border: none;
+}
+
+  
+footer {
+background-color: #838080;
+padding: 20px 0;
+text-align: center;
+  
+}
+.colorful-box {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/967/983/586/lifestyle-training-bodybuilding-bodybuilder-wallpaper-preview.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  color: #f2eeee;
+  text-align: center;
+}
+
+.box-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.box-content {
+  font-size: 16px;
+}
+.line-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+  flex: 0 0 50%;
+  padding: 30px;
+}
+
+.line {
+  margin-bottom: 10px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #000000;
+    text-align: center;
+  }
+
+  .social-media-handles {
+    margin-top: 10px;
+  }
+
+  .social-media-handles a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .container{
+    padding-left: 5%;
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+
+    </style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="{{ url_for('static', filename="images/logo.png") }}" alt="Fitness App Logo">
+			<h1>BeFIT</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/workouts">Workouts</a></li>
+				<li><a href="nutrition">Nutrition</a></li>
+				<li><a href="/community">Community</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+			</ul>
+		</nav>
+	</header>
+    <h1 align="center">Welcome to the BeFIT community page!</h1><br>
+
+    <div class="colorful-box">
+        <h3 class="box-title">Community Guidelines</h3>
+        <p class="box-content"> <ol>
+            <li><h4>Be Respectful:</h4> Treat every member of the community with kindness and respect.</li><br>
+            <li><h4>Share Your Experiences:</h4> Feel free to share your fitness experiences, success stories, challenges, and lessons learned.</li><br>
+            <li><h4>Offer Support and Advice:</h4> Help and guide fellow community members on their fitness journey.</li><br>
+            <li><h4>Ask Questions:</h4> Seek guidance and advice from the community.</li><br>
+            <li><h4>Stay Positive:</h4> Maintain a positive atmosphere within the community.</li><br>
+            <li><h4>Share Resources:</h4> Share interesting fitness-related resources with the community.</li><br>
+            <li><h4>Avoid Promotions:</h4> Refrain from excessive self-promotion or spamming.</li><br>
+            <li><h4>Respect Privacy:</h4> Protect your privacy and the privacy of others.</li><br>
+          </ol></p>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+    <section class="contact-us">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>If you have any questions or feedback, feel free to reach out to us.</p><br>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+      
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+      
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="1" required></textarea><br><br>
+      
+            <button type="submit">Send Message</button>
+          </form>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+
+              <div class="line-container">
+                <div class="left-column">
+                  <div class="line"><h3>Contact Information</h3></div>
+                  <div class="line"><p>Phone: +91****</p></div>
+                  <div class="line"><p>Email: info@example.com</p></div>
+                  <div class="line"><p><p>Address: 123 Street, Faridabad, India</p></p></div>
+
+                </div>
+                <div class="right-column">
+                  <div class="line"><h3>Business Hours</h3></div>
+                  <div class="line"><p>Monday - Friday: 9am - 5pm</p></div>
+                  <div class="line"><p>Saturday: 10am - 2pm</p></div>
+                  <div class="line"><p><p>Sunday: Closed</p></p></div>
+
+                </div>
+              </div>
+              
+              
+          </section>
+          
+      </section>
+      
+
+
+	<footer>
+        <p>Connect with us on social media:</p>
+    <div class="social-media-handles">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-discord"></i>
+      </a>
+    </div>
+
+		<!-- <p>&copy; 2023 BeFIT. All rights reserved.</p> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+	</footer>
+
+</body>
+</html>

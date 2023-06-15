@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Daily Fitness - Fitness App</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/style.css") }}">
+    <style>
+        img {
+        width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 20px;
+}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="{{ url_for('static', filename="images/logo.png") }}" alt="Fitness App Logo">
+			<h1>BeFIT</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/workouts">Workouts</a></li>
+				<li><a href="nutrition">Nutrition</a></li>
+				<li><a href="/community">Community</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero-section">
+		<h2>Daily Fitness Workouts</h2>
+		<p>Here are some effective workouts for Daily Fitness</p>
+	</section>
+
+	<section class="workouts-section">
+		<div class="workouts-container">
+            <div class="workout container">
+                <img src="{{ url_for('static', filename="images/jumping-jacks.jpg") }}" alt="jumping jacks">
+                <div class="text-box">
+                    <h3>Jumping Jacks</h3>
+                    <p>Jumping jacks are a great cardiovascular exercise that help to improve your heart and lung health. They also work your leg and arm muscles.</p>
+                </div>
+                </div>
+            <div class="workout container">
+                <div class="text-box">
+                    <h3>Push-Ups</h3>
+                    <p>Push-ups are a classic exercise that work your chest, shoulders, triceps, and core muscles. They can be done anywhere and require no equipment.</p></div>
+                <img src="{{ url_for('static', filename="images/push-ups.jpg") }}" alt="push-ups">
+            </div>
+            <div class="workouts-container">
+                <div class="workout container">
+                    <img src="{{ url_for('static', filename="images/squats.jpg") }}" alt="squats">
+                    <div class="text-box">
+                        <h3>Squats</h3>
+                        <p>Squats are a great lower body exercise that work your quads, hamstrings, and glutes. They can be done with no equipment or with weights for added resistance.</p>
+                    </div>
+                </div>
+                <div class="workout container">
+                    <div class="text-box">
+                        <h3>Plank</h3>
+                        <p>The plank is an excellent exercise for strengthening your core muscles, including your abs, back, and hips. It also helps to improve your posture.</p>
+                    </div>
+                    <img src="{{ url_for('static', filename="images/planks.png") }}" alt="Plank">
+                </div>
+	</section>
+
+	<footer>
+		<p>&copy; 2023 BeFIT. All rights reserved.</p>
+	</footer>
+</body>
+</html>

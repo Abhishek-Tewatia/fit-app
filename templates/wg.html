@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Weight Gain Workouts - Fitness App</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/style.css") }}">
+    <style>
+        img {
+        width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 20px;
+}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="{{ url_for('static', filename="images/logo.png") }}" alt="Fitness App Logo">
+			<h1>BeFIT</h1>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/workouts">Workouts</a></li>
+				<li><a href="nutrition">Nutrition</a></li>
+				<li><a href="/community">Community</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero-section">
+		<h2>Weight Gain Workouts</h2>
+		<p>Here are some effective workouts to help you gain weight and get a good phyisque:</p>
+	</section>
+
+	<section class="workouts-section">
+		<div class="workouts-container">
+			<div class="workout container">
+				<img src="{{ url_for('static', filename="images/squat.jpg") }}" alt="squat">
+                <div class="text-box">
+                    <h3>Squats</h3>
+				    <p>Squats are a type of strength training exercise that targets the muscles of the lower body, including the quadriceps, hamstrings, glutes, and calves.</p>
+                </div>
+				</div>
+			<div class="workout container">
+                <div class="text-box">
+                    <h3>Deadlifts</h3>
+				    <p>Deadlift is a weight training exercise that involves lifting a loaded barbell from the ground to a standing position. It primarily targets the muscles in the posterior chain, including the lower back, glutes, hamstrings, and calves, as well as the quadriceps, forearms, and core.</p></div>
+				<img src="{{ url_for('static', filename="images/deadlift.jpg") }}" alt="deadlift">
+			</div>
+            <div class="workouts-container">
+                <div class="workout container">
+                    <img src="{{ url_for('static', filename="images/bench.jpg") }}" alt="bench">
+                    <div class="text-box">
+                        <h3>Bench Press</h3>
+                        <p>Bench press is a popular exercise for building strength and muscle in the chest, shoulders, and triceps.</p>
+                    </div>
+                    </div>
+                <div class="workout container">
+                    <div class="text-box">
+                        <h3>Barbell Rows</h3>
+                        <p>Barbell rows are an effective compound exercise that target the muscles in your upper back, shoulders, and arms.</p></div>
+                    <img src="{{ url_for('static', filename="images/rows.jpg") }}" alt="rows">
+                </div>
+		    </div>
+            <div class="workouts-container">
+                <div class="workout container">
+                    <img src="{{ url_for('static', filename="images/spress.jpg") }}" alt="Shoulder Press">
+                    <div class="text-box">
+                        <h3>Shoulder Press</h3>
+                        <p>Shoulder press is a strength training exercise that primarily targets the shoulder muscles.</p>
+                    </div>
+                    </div>
+                    <div class="workout container">
+                        <div class="text-box">
+                          <h3>Bicep Curls</h3>
+                          <p>Bicep curls are a great exercise for building strength and muscle in the biceps, which are the muscles in the front of the upper arms.</p>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/bicep-curls.jpg') }}" alt="Bicep Curls">
+                      </div>
+                      
+                      <div class="workout container">
+                        <img src="{{ url_for('static', filename='images/tricep-ext.jpg') }}" alt="Tricep Extensions">
+                        <div class="text-box">
+                          <h3>Tricep Extensions</h3>
+                          <p>Tricep extensions are a great exercise for building strength and muscle in the triceps, which are the muscles in the back of the upper arms.</p>
+                        </div>
+                      </div>
+                      
+                      <div class="workout container">
+                        <div class="text-box">
+                          <h3>Lunges</h3>
+                          <p>Lunges are a great exercise for building strength and muscle in the legs, including the quads, glutes, and hamstrings.</p>
+                        </div>
+                        <img src="{{ url_for('static', filename='images/lunges.jpg') }}" alt="Lunges">
+                </div>                      
+	</section>
+
+	<footer>
+		<p>&copy; 2023 BeFIT. All rights reserved.</p>
+	</footer>
+</body>
+</html>
